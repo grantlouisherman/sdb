@@ -1,5 +1,5 @@
 **To Build**
-- cd build
+- mkdir build && cd build
 - cmake ..
 - cmake --build .
 - ./tools.sdb --- is executable
