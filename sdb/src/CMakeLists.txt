@@ -14,3 +14,15 @@ target_include_directories(libsdb
     PRIVATE 
         ${CMAKE_SOURCE_DIR}/src/include
 )
+include(GNUInstallDirs)
+install(TARGETS libsdb
+    EXPORT sdb-targets
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME ${CMAKE_INSTALL_BINDDIR}
+    INCLUDES ${CMAKE_INSTALL_INCLUDEDIR}
+)
+install(
+    DIRECTORY ${PROJECT_SOURCE_DIR}/include/
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
